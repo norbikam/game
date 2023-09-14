@@ -6,13 +6,14 @@ import {
   Button,
   ChakraProvider,
   border,
+  position,
   useFocusEffect,
 } from "@chakra-ui/react";
 import { serialize } from "v8";
 import { useState, useEffect } from "react";
 import { io, Socket } from "socket.io-client";
 
-const socket = io("process.env.PORT" || "http://localhost:4000");
+const socket = io("http://localhost:4000");
 
 const Game = () => {
   const [myChoice, setMyChoice] = useState("");
@@ -23,18 +24,25 @@ const Game = () => {
   const [opponentsChoice, setOpponentsChoice] = useState("");
   const [myChoiceShow, setMyChoiceShow] = useState("");
   const [opponentsChoiceShow, setOpponentsChoiceShow] = useState("");
+  const [gameInfo, setGameInfo] = useState("");
 
   const choices = ["Rock", "Paper", "Scissors"];
 
   const userChoice = (choice: string) => {
     setMyChoice(choice);
     setMyChoiceShow(choice);
+    setOpponentsChoiceShow("");
     socket.emit("userChoice", { choice });
+    setGameInfo("Waiting for opponents move...");
+    socket.emit("gameInfo", { gameInfo });
   };
 
   useEffect(() => {
     socket.on("opponentsChoice", ({ choice }) => {
       setOpponentsChoice(choice);
+      setOpponentsChoiceShow("");
+      setGameInfo("Opponent made his move! Your turn!");
+      socket.emit("gameInfo", { gameInfo });
     });
 
     return () => {
@@ -49,14 +57,17 @@ const Game = () => {
 
       if (myChoice === opponentsChoice) {
         setEqual(equal + 1);
+        setGameInfo("It's a tie!");
       } else if (
         (myChoice === "Rock" && opponentsChoice === "Scissors") ||
         (myChoice === "Paper" && opponentsChoice === "Rock") ||
         (myChoice === "Scissors" && opponentsChoice === "Paper")
       ) {
         setWinLeft(winLeft + 1);
+        setGameInfo("You won!");
       } else {
         setWinRight(winRight + 1);
+        setGameInfo("Opponent won");
       }
       setMyChoice("");
       setOpponentsChoice("");
@@ -80,6 +91,7 @@ const Game = () => {
             Go back
           </Button>
         </a>
+        <h1 style={{ position: "absolute", top: 10 }}>{gameInfo}</h1>
         <div style={{ textAlign: "center", position: "absolute", top: "30" }}>
           <Box
             display={"flex"}
@@ -127,7 +139,7 @@ const Game = () => {
           <h1>Your choice: {myChoiceShow}</h1>
           <h1 id="OC">Opponents choice: {opponentsChoiceShow}</h1>
         </div>
-        <div>
+        <div className="buttons">
           <Button
             borderRadius={"100%"}
             width={"7vw"}
