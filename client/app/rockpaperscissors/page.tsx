@@ -12,7 +12,7 @@ import { serialize } from "v8";
 import { useState, useEffect } from "react";
 import { io, Socket } from "socket.io-client";
 
-const socket = io("http://localhost:4000");
+const socket = io("process.env.PORT" || "http://localhost:4000");
 
 const Game = () => {
   const [myChoice, setMyChoice] = useState("");
