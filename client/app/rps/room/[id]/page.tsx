@@ -1,14 +1,14 @@
-// pages/app/room/[id].tsx
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { Box, Button, ChakraProvider } from "@chakra-ui/react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { io, Socket } from "socket.io-client";
 
 const socket = io("https://rock-paper-scissors-axnz.onrender.com");
 
 const RoomPage: React.FC = () => {
   const router = useRouter();
-  const { id } = router.query;
 
   const [myChoice, setMyChoice] = useState("");
   const [winLeft, setWinLeft] = useState(0);
