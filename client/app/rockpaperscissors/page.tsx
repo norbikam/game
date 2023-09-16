@@ -10,8 +10,10 @@ import {
   useFocusEffect,
 } from "@chakra-ui/react";
 import { serialize } from "v8";
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext } from "react";
 import { io, Socket } from "socket.io-client";
+
+const MyContext = createContext("default");
 
 const socket = io("http://localhost:10000");
 
