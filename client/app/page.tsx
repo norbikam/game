@@ -30,12 +30,16 @@ export default function Home() {
       >
         Clicker
       </Button>
-      <Box>
+      <Box display={"flex"} justifyContent={"center"}>
         <a href="/rickandmorty">
           <Button>Rick And Morty API</Button>
         </a>
         <a href="/rockpaperscissors">
           <Button>Rock Paper Scissors</Button>
+        </a>
+        <br></br>
+        <a href="/rps">
+          <Button>Rock Paper Scissors Exclusive Rooms</Button>
         </a>
       </Box>
     </main>
