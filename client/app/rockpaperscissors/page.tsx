@@ -82,7 +82,7 @@ const Game = () => {
         className="flex min-h-screen flex-col items-center justify-between p-24"
         style={{ backgroundColor: "white" }}
       >
-        <a href="https://rock-paper-scissors-client-six.vercel.app/">
+        <a href="/">
           <Button
             left={5}
             position={"absolute"}

@@ -31,6 +31,9 @@ const Home = () => {
     <main style={{ textAlign: "center" }}>
       <div>Room ID: {roomId}</div>
       <button onClick={handleCreateLobby}>Create Lobby</button>
+      <a href="/">
+        <button>Quit</button>
+      </a>
     </main>
   );
 };

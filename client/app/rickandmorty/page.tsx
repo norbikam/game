@@ -161,7 +161,7 @@ function Boxx(props: {
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between p-5">
-      <a href="https://rock-paper-scissors-client-six.vercel.app/">
+      <a href="https://noapp.vercel.app/">
         <Button
           left={5}
           position={"absolute"}
