@@ -31,7 +31,7 @@ export default function Home() {
         Clicker
       </Button>
       <Box>
-        <a href="/rickandmorty1">
+        <a href="/rickandmorty">
           <Button>Rick And Morty API</Button>
         </a>
         <a href="/rockpaperscissors">
