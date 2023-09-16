@@ -1,3 +1,4 @@
+import { color } from "framer-motion";
 import Link from "next/link";
 
 interface CharacterDetailProps {
@@ -12,7 +13,7 @@ interface CharacterDetailProps {
 
 const CharacterDetail = ({ character }: CharacterDetailProps) => {
   return (
-    <div>
+    <div style={{ color: "black" }}>
       <h1>{character.name}</h1>
       {/* ... (other character details) */}
       <Link href="/characters">Back to Characters</Link>

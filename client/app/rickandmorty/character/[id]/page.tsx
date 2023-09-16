@@ -24,7 +24,7 @@ function CharacterDetails(props: {
 }) {
   return (
     <main className="flex flex-col items-center justify-between p-5">
-      <Box width={"50%"}>
+      <Box width={"50%"} color={"black"}>
         <Box display={"flex"}>
           <Box>
             <h1 style={{ fontSize: 70, padding: 5 }}>{props.name}</h1>
@@ -49,7 +49,11 @@ function CharacterDetails(props: {
           paddingTop={5}
         >
           <Link href={"/rickandmorty"}>
-            <Button border={"2px solid black"} fontSize={"150%"}>
+            <Button
+              border={"2px solid black"}
+              fontSize={"150%"}
+              color={"black"}
+            >
               Go Back
             </Button>
           </Link>

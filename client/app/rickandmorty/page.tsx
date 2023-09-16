@@ -83,7 +83,12 @@ const Dane = () => {
   return (
     <div>
       <div
-        style={{ textAlign: "center", marginBottom: "20px", marginTop: "22px" }}
+        style={{
+          textAlign: "center",
+          marginBottom: "20px",
+          marginTop: "22px",
+          color: "black",
+        }}
       >
         <Input
           placeholder="Lookup character..."
@@ -110,7 +115,7 @@ const Dane = () => {
           ></Boxx>
         ))}
       </div>
-      <div style={{ textAlign: "center", marginTop: "20px" }}>
+      <div style={{ textAlign: "center", marginTop: "20px", color: "black" }}>
         <Button onClick={prevPage} disabled={!data?.info.prev}>
           Previous Page
         </Button>
@@ -118,7 +123,7 @@ const Dane = () => {
           Next Page
         </Button>
       </div>
-      <p style={{ textAlign: "center" }}>
+      <p style={{ textAlign: "center", color: "black" }}>
         Page {currentPage} of {data?.info.pages}
       </p>
     </div>
@@ -143,6 +148,7 @@ function Boxx(props: {
         padding={2}
         margin={2}
         textAlign="center"
+        color={"black"}
       >
         <h1>{props.name}</h1>
         <br></br>
