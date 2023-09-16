@@ -36,5 +36,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(PORT, () => {
-  console.log("server listening on http://localhost:4000");
+  console.log("server listening on http://localhost:10000");
 });
