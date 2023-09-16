@@ -15,7 +15,7 @@ import { io, Socket } from "socket.io-client";
 
 const MyContext = createContext("default");
 
-const socket = io("http://localhost:10000");
+const socket = io("https://rock-paper-scissors-axnz.onrender.com");
 
 const Game = () => {
   const [myChoice, setMyChoice] = useState("");
