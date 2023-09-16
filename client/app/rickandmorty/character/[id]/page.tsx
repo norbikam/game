@@ -24,7 +24,7 @@ function CharacterDetails(props: {
 }) {
   return (
     <main className="flex flex-col items-center justify-between p-5">
-      <Box width={"50%"} color={"black"}>
+      <Box width={"50%"}>
         <Box display={"flex"}>
           <Box>
             <h1 style={{ fontSize: 70, padding: 5 }}>{props.name}</h1>
@@ -49,11 +49,7 @@ function CharacterDetails(props: {
           paddingTop={5}
         >
           <Link href={"/rickandmorty"}>
-            <Button
-              border={"2px solid black"}
-              fontSize={"150%"}
-              color={"black"}
-            >
+            <Button border={"2px solid black"} fontSize={"150%"}>
               Go Back
             </Button>
           </Link>
@@ -87,11 +83,17 @@ const CharacterDetail = async ({ character }: CharacterDetailProps) => {
   const router = useRouter();
 
   return (
-    <div>
+    <div style={{ color: "black" }}>
       <h1>{character.name}</h1>
       <p>Gender: {character.gender}</p>
       <p>Location: {character.origin.name}</p>
       {/* Add more details as needed */}
     </div>
   );
+};
+
+export const getBaseUrl = () => {
+  if (typeof window !== "undefined") return ""; // browser should use relative url
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`; // SSR should use vercel url
+  return `http://localhost:${process.env.PORT ?? 3000}`; // dev SSR should use localhost
 };

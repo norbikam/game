@@ -25,9 +25,17 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-
+h1 {
+  font-size: 140%;
+  color: black;
+}
+p {
+  font-size: 120%;
+  padding: 2%;
+}
 main {
   background-color: white;
+  color: black;
 }
 Button {
   border: 1px solid black;

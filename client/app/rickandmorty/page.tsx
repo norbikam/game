@@ -83,12 +83,7 @@ const Dane = () => {
   return (
     <div>
       <div
-        style={{
-          textAlign: "center",
-          marginBottom: "20px",
-          marginTop: "22px",
-          color: "black",
-        }}
+        style={{ textAlign: "center", marginBottom: "20px", marginTop: "22px" }}
       >
         <Input
           placeholder="Lookup character..."
@@ -111,11 +106,11 @@ const Dane = () => {
             avatarSrc={character.image}
             gender={character.gender}
             location={character.origin.name}
-            characterUrl={`rickandmorty1/character/${character.id}`}
+            characterUrl={`rickandmorty/character/${character.id}`}
           ></Boxx>
         ))}
       </div>
-      <div style={{ textAlign: "center", marginTop: "20px", color: "black" }}>
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
         <Button onClick={prevPage} disabled={!data?.info.prev}>
           Previous Page
         </Button>
@@ -123,7 +118,7 @@ const Dane = () => {
           Next Page
         </Button>
       </div>
-      <p style={{ textAlign: "center", color: "black" }}>
+      <p style={{ textAlign: "center" }}>
         Page {currentPage} of {data?.info.pages}
       </p>
     </div>
@@ -166,7 +161,7 @@ function Boxx(props: {
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between p-5">
-      <a href="https://rock-paper-scissors-client-six.vercel.app/">
+      <a href="http://localhost:3000">
         <Button
           left={5}
           position={"absolute"}
