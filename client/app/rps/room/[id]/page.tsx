@@ -74,7 +74,7 @@ const RoomPage: React.FC = () => {
         className="flex min-h-screen flex-col items-center justify-between p-24"
         style={{ backgroundColor: "white" }}
       >
-        <a href="https://rock-paper-scissors-client-six.vercel.app/">
+        <a href="https://rock-paper-scissors-client-six.vercel.app/rps">
           <Button
             left={5}
             position={"absolute"}
@@ -82,7 +82,7 @@ const RoomPage: React.FC = () => {
             background={"gray.200"}
             color={"black"}
           >
-            Go back
+            Quit
           </Button>
         </a>
         <h1 style={{ position: "absolute", top: 10 }}>{gameInfo}</h1>
