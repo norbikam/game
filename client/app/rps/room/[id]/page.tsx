@@ -133,27 +133,31 @@ const RoomPage: React.FC = () => {
           <h1>Your choice: {myChoiceShow}</h1>
           <h1 id="OC">Opponents choice: {opponentsChoiceShow}</h1>
         </div>
-        <div className="buttons">
+        <div
+          className="buttons"
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "space-around",
+          }}
+        >
           <Button
-            borderRadius={"100%"}
-            width={"7vw"}
-            height={"7vw"}
+            width={"30%"}
+            height={"10vw"}
             onClick={() => userChoice("Rock")}
           >
             Rock
           </Button>
           <Button
-            borderRadius={"100%"}
-            width={"7vw"}
-            height={"7vw"}
+            width={"30%"}
+            height={"10vw"}
             onClick={() => userChoice("Paper")}
           >
             Paper
           </Button>
           <Button
-            borderRadius={"100%"}
-            width={"7vw"}
-            height={"7vw"}
+            width={"30%"}
+            height={"10vw"}}
             onClick={() => userChoice("Scissors")}
           >
             Scissors
